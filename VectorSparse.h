@@ -7,14 +7,23 @@
 
 #include "IVector.h"
 #include <unordered_map>
+#include <stdexcept>
 
 class VectorSparse: public IVector {
 public:
+    explicit VectorSparse(long size) {
+        if(size >= 0 )
+            this->_size = size;
+        else
+            throw std::invalid_argument("Size must be >= 0");
+
+    }
     unsigned long getSize() override;
     int get(int pos) override;
     void set(int pos, int val) override;
 private:
     std::unordered_map<int, int> data;
+    unsigned long _size;
 };
 
 

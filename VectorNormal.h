@@ -7,10 +7,17 @@
 
 #include "IVector.h"
 #include <vector>
+#include <stdexcept>
 
 class VectorNormal: public IVector {
 public:
-    VectorNormal(int size) { this->data.resize(size); }
+    explicit VectorNormal(long size) {
+        if(size >= 0 )
+            this->data.resize(size);
+        else
+            throw std::invalid_argument("Size must be >= 0");
+
+    }
     unsigned long getSize() override;
     int get(int pos) override;
     void set(int pos, int val) override;

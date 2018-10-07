@@ -1,9 +1,8 @@
 #include <iostream>
 #include "VectorNormal.h"
 #include "VectorSparse.h"
+#include "MatrixNormal.h"
 int main() {
-    VectorSparse v;
-    v.set(1, 5);
-    std::cout << v.get(1);
+    MatrixNormal m(2,2);
     return 0;
 }

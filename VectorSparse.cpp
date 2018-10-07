@@ -6,11 +6,14 @@
 
 
 unsigned long VectorSparse::getSize() {
-    return this->data.size();
+    return this->_size;
 }
 
 int VectorSparse::get(int pos) {
-    return this->data[pos];
+    if(this->data.find(pos) != this->data.end())
+        return this->data.at(pos);
+    else
+        return 0;
 }
 
 void VectorSparse::set(int pos, int val) {
