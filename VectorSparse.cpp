@@ -10,6 +10,8 @@ unsigned long VectorSparse::getSize() {
 }
 
 int VectorSparse::get(int pos) {
+    if(pos <= 0 || pos > this->_size - 1)
+        throw std::out_of_range("VectorSparse::get pos out of range");
     if(this->data.find(pos) != this->data.end())
         return this->data.at(pos);
     else
