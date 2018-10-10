@@ -3,4 +3,4 @@ project(Lab1_2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Lab1_2 main.cpp IVector.h VectorNormal.cpp VectorNormal.h VectorSparse.cpp VectorSparse.h IMatrix.h MatrixNormal.cpp MatrixNormal.h AMatrix.cpp AMatrix.h MatrixSparse.cpp MatrixSparse.h MatrixInitiator.cpp MatrixInitiator.h)
+add_executable(Lab1_2 main.cpp IVector.h VectorNormal.cpp VectorNormal.h VectorSparse.cpp VectorSparse.h IMatrix.h MatrixNormal.cpp MatrixNormal.h AMatrix.cpp AMatrix.h MatrixSparse.cpp MatrixSparse.h MatrixInitiator.cpp MatrixInitiator.h MatrixStatistics.cpp MatrixStatistics.h)

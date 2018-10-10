@@ -13,7 +13,7 @@ public:
 
 protected:
     MatrixNormal() = default;
-    IVector* createVector(long size) override {
+    IVector* createVector(long size) const override {
         return new VectorNormal(size);
     }
 

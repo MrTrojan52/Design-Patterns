@@ -7,8 +7,8 @@
 
 class IVector {
 public:
-    virtual unsigned long getSize() = 0;
-    virtual int get(int) = 0;
+    virtual unsigned long getSize() const = 0;
+    virtual int get(int) const = 0;
     virtual void set(int, int) = 0;
 };
 

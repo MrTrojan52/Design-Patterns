@@ -5,16 +5,16 @@
 #include "AMatrix.h"
 
 
-unsigned long AMatrix::getRows() {
+unsigned long AMatrix::getRows() const {
     return this->data.size();
 }
 
 
-unsigned long AMatrix::getCols() {
+unsigned long AMatrix::getCols() const {
     return this->data[0]->getSize();
 }
 
-int AMatrix::get(int row, int col) {
+int AMatrix::get(int row, int col) const {
     return this->data[row]->get(col);
 }
 

@@ -6,9 +6,9 @@
 #define LAB1_2_IMATRIX_H
 class IMatrix {
 public:
-    virtual unsigned long getRows() = 0;
-    virtual unsigned long getCols() = 0;
-    virtual int get(int, int) = 0;
+    virtual unsigned long getRows() const = 0;
+    virtual unsigned long getCols() const = 0;
+    virtual int get(int, int) const = 0;
     virtual void set(int, int, int) = 0;
 };
 #endif //LAB1_2_IMATRIX_H

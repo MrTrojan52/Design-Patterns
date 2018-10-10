@@ -18,8 +18,8 @@ public:
             throw std::invalid_argument("Size must be >= 0");
 
     }
-    unsigned long getSize() override;
-    int get(int pos) override;
+    unsigned long getSize() const override;
+    int get(int pos) const override;
     void set(int pos, int val) override;
 private:
     std::vector<int> data;

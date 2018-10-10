@@ -5,12 +5,12 @@
 #include "VectorSparse.h"
 
 
-unsigned long VectorSparse::getSize() {
+unsigned long VectorSparse::getSize() const {
     return this->_size;
 }
 
-int VectorSparse::get(int pos) {
-    if(pos <= 0 || pos > this->_size - 1)
+int VectorSparse::get(int pos) const {
+    if(pos < 0 || pos > this->_size - 1)
         throw std::out_of_range("VectorSparse::get pos out of range");
     if(this->data.find(pos) != this->data.end())
         return this->data.at(pos);

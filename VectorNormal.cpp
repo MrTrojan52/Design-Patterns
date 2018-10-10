@@ -5,11 +5,11 @@
 #include "VectorNormal.h"
 
 
-unsigned long VectorNormal::getSize() {
+unsigned long VectorNormal::getSize() const {
     return this->data.size();
 }
 
-int VectorNormal::get(int pos) {
+int VectorNormal::get(int pos) const {
     return this->data.at(pos);
 }
 

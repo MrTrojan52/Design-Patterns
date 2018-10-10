@@ -23,13 +23,13 @@ public:
             delete data[i];
         }
     }
-    unsigned long getRows() override;
-    unsigned long getCols() override;
-    int get(int row, int col) override;
+    unsigned long getRows() const override ;
+    unsigned long getCols() const override;
+    int get(int row, int col) const override;
     void set(int row, int col, int val) override;
 protected:
     AMatrix() = default;
-    virtual IVector* createVector(long size) {
+    virtual IVector* createVector(long size) const {
         return new VectorNormal(size);
     };
 

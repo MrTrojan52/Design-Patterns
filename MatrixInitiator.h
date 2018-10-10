@@ -9,7 +9,7 @@
 
 class MatrixInitiator {
 public:
-    static void fillMatrix(AMatrix* matrix, long nonZeroCount, long maxValue);
+    static void fillMatrix(AMatrix* const matrix, long nonZeroCount, long maxValue);
 };
 
 
