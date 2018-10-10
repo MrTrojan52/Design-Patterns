@@ -9,14 +9,13 @@
 #include "VectorNormal.h"
 class MatrixNormal: public AMatrix {
 public:
-    MatrixNormal(int rows, int cols) : AMatrix(rows, cols) {}
+    MatrixNormal(int rows, int cols) : AMatrix(rows, cols, new MatrixNormal()) {}
 
 protected:
+    MatrixNormal() = default;
     IVector* createVector(long size) override {
-        //TODO: Разобраться с createVector для наследников
         return new VectorNormal(size);
     }
-private:
 
 };
 

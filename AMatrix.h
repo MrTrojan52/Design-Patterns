@@ -11,20 +11,25 @@
 #include "VectorNormal.h"
 class AMatrix: public IMatrix {
 public:
-    AMatrix(long rows, long cols) {
+    AMatrix(long rows, long cols, AMatrix* matrix) {
         this->data.resize(rows);
-        //TODO: Разобраться с createVector для наследников
         for(long i = 0; i < rows; ++i)
-            this->data[i] = createVector(cols);
+            this->data[i] = matrix->createVector(cols);
+        delete matrix;
 
+    }
+    virtual ~AMatrix(){
+        for(long i = 0; i < data.size(); ++i) {
+            delete data[i];
+        }
     }
     unsigned long getRows() override;
     unsigned long getCols() override;
     int get(int row, int col) override;
     void set(int row, int col, int val) override;
 protected:
+    AMatrix() = default;
     virtual IVector* createVector(long size) {
-        //TODO: Разобраться с createVector для наследников
         return new VectorNormal(size);
     };
 
