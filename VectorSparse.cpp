@@ -19,5 +19,10 @@ int VectorSparse::get(int pos) const {
 }
 
 void VectorSparse::set(int pos, int val) {
-    this->data[pos] = val;
+    if(val) {
+        this->data[pos] = val;
+    } else {
+        this->data.erase(pos); // delete element if exists
+    }
+
 }
