@@ -4,16 +4,20 @@
 
 #include "MatrixInitiator.h"
 #include <ctime>
+#include <numeric>
+#include <vector>
 void MatrixInitiator::fillMatrix(AMatrix * const matrix, long nonZeroCount, long maxValue) {
     srand(time(nullptr));
-    long rows = matrix->getRows();
-    long cols = matrix->getCols();
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            if(nonZeroCount > 0) {
-                matrix->set(i, j, static_cast<int>(rand() % maxValue + 1));
-                nonZeroCount--;
-            }
-        }
+    unsigned long rows = matrix->getRows();
+    unsigned long cols = matrix->getCols();
+    long count = 0;
+    std::vector<int> indices(rows * cols);
+    std::iota(indices.begin(), indices.end(), 0);
+    while (count != nonZeroCount && count < rows*cols)
+    {
+        unsigned long pos = rand() % indices.size();
+        matrix->set(indices[pos] / cols, indices[pos] % cols, rand() % maxValue + 1);
+        indices.erase(indices.begin() + pos);
+        ++count;
     }
 }
