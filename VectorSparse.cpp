@@ -19,6 +19,8 @@ int VectorSparse::get(int pos) const {
 }
 
 void VectorSparse::set(int pos, int val) {
+    if(pos < 0 || pos > this->_size - 1)
+        throw std::out_of_range("VectorSparse::set pos out of range");
     if(val) {
         this->data[pos] = val;
     } else {

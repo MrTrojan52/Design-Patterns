@@ -29,9 +29,7 @@ public:
     void set(int row, int col, int val) override;
 protected:
     AMatrix() = default;
-    virtual IVector* createVector(long size) const {
-        return new VectorNormal(size);
-    };
+    virtual IVector* createVector(long size) const = 0;
 
 private:
     std::vector<IVector*> data;
