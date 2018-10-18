@@ -25,8 +25,7 @@ long MatrixStatistics::notZeroCount() const {
     long cols = this->_matrix->getCols();
     for(long i = 0; i < rows; ++i) {
         for (long j = 0; j < cols; ++j) {
-            int item = this->_matrix->get(i, j);
-            if(item) ++count;
+            if(this->_matrix->get(i, j)) ++count;
         }
     }
     return count;
