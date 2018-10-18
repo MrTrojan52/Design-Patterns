@@ -18,10 +18,7 @@ public:
     double average() const;
 
 private:
-    long _sum;
-    long _notZeroCount;
-    int _maxValue;
-    double _average;
+    AMatrix* _matrix;
 };
 
 
