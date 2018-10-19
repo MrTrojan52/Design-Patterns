@@ -9,7 +9,7 @@
 
 class MatrixStatistics {
 public:
-    explicit MatrixStatistics(AMatrix* const matrix);
+    explicit MatrixStatistics(IMatrix* const matrix);
 
 public:
     long notZeroCount() const;
@@ -18,7 +18,7 @@ public:
     double average() const;
 
 private:
-    AMatrix* _matrix;
+    IMatrix* _matrix;
 };
 
 

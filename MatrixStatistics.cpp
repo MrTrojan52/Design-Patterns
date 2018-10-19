@@ -4,7 +4,7 @@
 
 #include "MatrixStatistics.h"
 #include <limits>
-MatrixStatistics::MatrixStatistics(AMatrix *const matrix):_matrix(matrix) { }
+MatrixStatistics::MatrixStatistics(IMatrix *const matrix):_matrix(matrix) { }
 
 long MatrixStatistics::sum() const {
     long sum = 0;
